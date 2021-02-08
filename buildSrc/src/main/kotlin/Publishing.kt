@@ -73,10 +73,10 @@ fun mavenRepositoryUri(): URI {
 
 fun configureMavenPublication(rh: RepositoryHandler, project: Project) {
     rh.maven {
-        url = mavenRepositoryUri()
+        url = URI("https://artifactory.vizio.com/artifactory/vizio_iot_maven")
         credentials {
-            username = project.getSensitiveProperty("libs.sonatype.user")
-            password = project.getSensitiveProperty("libs.sonatype.password")
+            username = project.findProperty("artifactoryUser") as? String ?: System.getenv("ARTIFACTORY_USER")
+            password = project.findProperty("artifactoryApiKey") as? String ?: System.getenv("ARTIFACTORY_API_KEY")
         }
     }
 }
