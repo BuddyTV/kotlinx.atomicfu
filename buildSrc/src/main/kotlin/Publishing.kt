@@ -20,7 +20,7 @@ infix fun <T> Property<T>.by(value: T) {
 fun MavenPom.configureMavenCentralMetadata(project: Project) {
     name by project.name
     description by "AtomicFU utilities"
-    url by "https://github.com/Kotlin/kotlinx.atomicfu"
+    url by "https://github.com/BuddyTV/kotlinx.atomicfu"
 
     licenses {
         license {
@@ -40,7 +40,7 @@ fun MavenPom.configureMavenCentralMetadata(project: Project) {
     }
 
     scm {
-        url by "https://github.com/Kotlin/kotlinx.atomicfu"
+        url by "https://github.com/BuddyTV/kotlinx.atomicfu"
     }
 }
 
