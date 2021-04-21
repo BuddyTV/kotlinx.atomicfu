@@ -73,7 +73,7 @@ fun mavenRepositoryUri(): URI {
 
 fun configureMavenPublication(rh: RepositoryHandler, project: Project) {
     rh.maven {
-        url = URI("https://artifactory.vizio.com/artifactory/vizio_iot_maven")
+        url = URI("https://artifactory.vizio.com/artifactory/smartcast-sdk-local")
         credentials {
             username = project.findProperty("artifactoryUser") as? String ?: System.getenv("ARTIFACTORY_USER")
             password = project.findProperty("artifactoryApiKey") as? String ?: System.getenv("ARTIFACTORY_API_KEY")
